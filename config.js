@@ -1,0 +1,1 @@
+window.TEST_CONFIG={"vapidPublicKey":"BKpWJWEDZkQj6w7R9KCFuX1RwSW9Er3ImwLVEH8_IV3dAo-Z8XK6DidJ_gLb9lmuciObJ-IZ9LFC_-I5tzug8-0","senderEndpoint":"http://localhost:8787"};

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PWA Compatibility Test — DISPOSABLE</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#111827">
+<style>
+ :root{color-scheme:dark}
+ body{font:15px/1.45 system-ui,sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:12px}
+ h1{font-size:17px;margin:0 0 2px} .warn{background:#7f1d1d;color:#fee2e2;padding:8px;border-radius:8px;margin:8px 0;font-weight:600}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+ .card{background:#1f2937;border-radius:8px;padding:8px;font-size:12px} .card b{display:block;font-size:13px}
+ button{background:#4f46e5;color:#fff;border:0;border-radius:8px;padding:10px 12px;font-size:14px;margin:3px;min-width:44px;min-height:44px}
+ button.alt{background:#374151} button.rec{background:#b91c1c}
+ pre{background:#0b1220;padding:8px;border-radius:8px;font-size:11px;white-space:pre-wrap;word-break:break-all;max-height:160px;overflow:auto}
+ ul{list-style:none;padding:0} li{background:#1f2937;border-radius:8px;padding:8px;margin:6px 0;font-size:13px}
+ .tag{font-size:11px;background:#374151;border-radius:6px;padding:1px 6px;margin-right:4px}
+</style>
+</head>
+<body>
+<h1>PWA Compatibility Test — DISPOSABLE</h1>
+<div class="warn">Synthetic test data only. No AI, no production credentials. Deleted after tests.</div>
+<div class="grid">
+  <div class="card"><b id="s-sec">secureContext</b><span id="v-sec">?</span></div>
+  <div class="card"><b id="s-sw">serviceWorker</b><span id="v-sw">?</span></div>
+  <div class="card"><b id="s-idb">indexedDB</b><span id="v-idb">?</span></div>
+  <div class="card"><b id="s-push">pushSubscription</b><span id="v-push">?</span></div>
+</div>
+<div>
+  <button id="b-note">Add synthetic note</button>
+  <button id="b-rec" class="rec">Record 10s</button>
+  <button id="b-sub" class="alt">Subscribe push</button>
+</div>
+<div>
+  <button id="b-sync" class="alt">Sync pending</button>
+  <button id="b-dump" class="alt">Dump state</button>
+</div>
+<h3 style="font-size:14px">Items</h3><ul id="items"></ul>
+<h3 style="font-size:14px">Delivery events (verifiable)</h3><ul id="events"></ul>
+<h3 style="font-size:14px">Subscription JSON (for sender)</h3><pre id="subjson">none</pre>
+<script src="./config.js"></script>
+<script src="./app.js"></script>
+</body></html>
