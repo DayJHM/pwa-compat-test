@@ -1,5 +1,5 @@
 /* Disposable test service worker: cache app shell, handle push, record verifiable delivery events. */
-const CACHE = 'pwa-test-v1';
+const CACHE = 'pwa-test-v2';
 const SHELL = ['./','./index.html','./app.js','./config.js','./share.html','./share.js','./manifest.webmanifest',
                './icons/icon-192.png','./icons/icon-512.png'];
 
