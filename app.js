@@ -47,6 +47,7 @@ async function record(seconds=10) {
   await render(); return {id:item.id, size:item.size, mime:item.mime};
 }
 async function subscribe() {
+ try {
   if (!('PushManager' in window)) return {error:'no PushManager'};
   const reg = await navigator.serviceWorker.ready;
   const perm = await Notification.requestPermission();
@@ -59,6 +60,7 @@ async function subscribe() {
   try { await fetch(CFG.senderEndpoint+'/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(json)}); }
   catch(e) { /* blocked or unreachable — use the JSON above instead */ }
   await render(); return {ok:true, endpoint:(json.endpoint||'').slice(-24)};
+ } catch(e) { return {error:String(e), name:(e&&e.name)||null}; }
 }
 async function syncPending() {
   const items = (await (await idb()).all('items')).filter(i => i.syncState === 'pending');
